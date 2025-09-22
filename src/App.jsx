@@ -1,10 +1,23 @@
 import React from "react";
+import Login from "./components/Login";
+import Home from "./components/Home";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login />,
+  },
+  {
+    path: "home",
+    element: <Home />,
+  },
+]);
 
 function App() {
   return (
     <div>
-      <h1 className="text-[red]">App</h1>
-      <p className="text-[blue]">This is a simple React application.</p>
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
